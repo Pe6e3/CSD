@@ -5,9 +5,9 @@ namespace CSD.Web.Data;
 
 public class CSDContext : DbContext
 {
-    public CSDContext(DbContextOptions options) : base(options)
-    {
+    public CSDContext(DbContextOptions options) : base(options){}
+
         public DbSet<Category> Categories { get; set; }
 }
 
-}
+
