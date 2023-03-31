@@ -7,6 +7,7 @@ namespace CSD.Web.Controllers
 {
     public class CategoriesController : Controller
     {
+
         private readonly CSDContext _db;
 
         public CategoriesController(CSDContext db)
@@ -60,6 +61,8 @@ namespace CSD.Web.Controllers
         // GET: Categories/Edit/5
         public ActionResult Edit(int id)
         {
+            ViewBag.Categories = new SelectList(_db.Categories.Where(x => x.ParentId == 0), "Id", "Name");
+
             var category = _db.Categories.Find(id);
             if (category == null)
             {
@@ -72,6 +75,8 @@ namespace CSD.Web.Controllers
         [HttpPost]
         public IActionResult Edit(int id, Category category)
         {
+            ViewBag.Categories = new SelectList(_db.Categories.Where(x => x.ParentId == 0), "Id", "Name");
+
             if (id != category.Id)
             {
                 return NotFound();
@@ -88,6 +93,8 @@ namespace CSD.Web.Controllers
         // GET: Categories/Delete/5
         public IActionResult Delete(int id)
         {
+            ViewBag.Categories = new SelectList(_db.Categories.Where(x => x.ParentId == 0), "Id", "Name");
+
             var category = _db.Categories.FirstOrDefault(m => m.Id == id);
             if (category == null)
             {
@@ -101,6 +108,8 @@ namespace CSD.Web.Controllers
         [HttpPost]
         public IActionResult DeleteConfirmed(int id)
         {
+            ViewBag.Categories = new SelectList(_db.Categories.Where(x => x.ParentId == 0), "Id", "Name");
+
             var category = _db.Categories.Find(id);
             if (category != null)
             {
