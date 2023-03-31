@@ -21,3 +21,7 @@ body {
     margin-bottom: 60px;
     background-color: antiquewhite;
 }
+
+.list-group-item{
+    background-color: #ebeb97;
+}
