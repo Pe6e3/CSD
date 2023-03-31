@@ -10,9 +10,9 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-dark bg-dark  navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3 ">
+            shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CSD.Web</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,10 +20,10 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Главная">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link" asp-area="" asp-controller="Categories" asp-action="Index">Категории</a>
                         </li>
                     </ul>
                 </div>
@@ -47,3 +47,23 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
+<style>
+    .nav-link {
+        font-size: calc(10px + 1vw);
+        margin-right: 30px;
+        font-weight: bold;
+        text-align: center;
+        /*font-family: 'Kosugi Maru', sans-serif;*/
+        /*font-family: 'Neucha', cursive;*/
+        font-family: 'Raleway', sans-serif;
+        /*font-family: 'Rubik Mono One', sans-serif;*/
+        transition: 0.5s;
+    }
+
+        .nav-link:hover {
+            transition: 0.5s;
+            transform: scale(1.07);
+        }
+
+</style>
