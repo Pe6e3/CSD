@@ -4,10 +4,10 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Все посты</h1>
 
 <p>
-    <a asp-action="Create"><img src="/ico/add.png" class="icon"/></a>
+    <a asp-action="Create"><img src="/ico/add.png" class="icon" onmouseover="playSound()" onclick="return false;" /></a>
 </p>
 <table class="table">
     <thead>
@@ -16,15 +16,12 @@
                 @Html.DisplayNameFor(model => model.Title)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Text)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.LastUpdate)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Category)
             </th>
-            <th></th>
+            <th> Действия со статьей</th>
         </tr>
     </thead>
     <tbody>
@@ -34,20 +31,36 @@
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Text)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.LastUpdate)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Category.Name)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id"> <img src="/ico/edit2.png" class="icon" /></a> 
-                    <a asp-action="Details" asp-route-id="@item.Id"> <img src="/ico/info.png" class="icon" /></a>
-                <a asp-action="Delete" asp-route-id="@item.Id"><img src="/ico/delete.png" class="icon"/></a>
+                <a asp-action="Edit" asp-route-id="@item.Id"> <img src="/ico/edit2.png" class="icon" onmouseover="playSound()" onclick="return false;" /></a>
+                    <a asp-action="Details" asp-route-id="@item.Id"> <img src="/ico/info.png" class="icon" onmouseover="playSound()" onclick="return false;" /></a>
+                    <a asp-action="Delete" asp-route-id="@item.Id"><img src="/ico/delete.png" class="icon" onmouseover="playSound()" onclick="return false;" /></a>
             </td>
         </tr>
 }
+
+
+
+        <audio id="myAudio">
+            <source src="/ico/click.mp3" type="audio/mpeg">
+        </audio>
+
+        @*<div class="icon" onmouseover="playSound()" onclick="return false;"> </div>*@
+
+        <script>
+            function playSound() {
+                var audio = document.getElementById("myAudio");
+                audio.currentTime = 0;
+                audio.play();
+            }
+
+        </script>
+
+
     </tbody>
 </table>

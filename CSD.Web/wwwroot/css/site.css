@@ -35,12 +35,56 @@ body {
     border-radius: 8px;
 }
 
-@keyframes spin {
-    50% {
-        transform: rotate(30deg);
+@keyframes shake {
+    20% {
+        transform: rotate(15deg);
+
+    }
+
+    80% {
+        transform: rotate(-20deg);
+        transform: scale(1.2);
     }
 }
 
 .icon:hover {
-    animation: spin 1s ease;
+    transform: scale(1.2);
+    animation: shake 0.4s ease;
+    animation-play-state: running;
+    animation-delay: 0.1s;
 }
+
+
+
+
+table {
+    width: 100%;
+    /*max-width: 800px;*/
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: none;
+    background-color: rgba(100, 220, 30, 0.2);
+    box-shadow: 3px 10px 13px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid rgba(74, 52, 52, 0.5);
+}
+
+th {
+    color: #4a3434;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+
+.table {
+    text-align: center;
+    vertical-align: middle;
+}
+

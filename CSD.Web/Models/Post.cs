@@ -23,6 +23,7 @@ public class Post
     public DateTime LastUpdate { get; set; }
 
     [Required]
+    [Display(Name = "Категория")]
     public int CategoryId { get; set; }
     public virtual Category? Category { get; set; }
 }
